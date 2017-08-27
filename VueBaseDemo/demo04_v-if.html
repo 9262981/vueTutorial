@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title></title>
+    </head>
+    <body>
+        <div id="app">
+        	<code>
+        		v-if是条件渲染指令，它根据表达式的真假来删除和插入元素，它的基本语法如下：
+				v-if="expression"
+				expression是一个返回bool值的表达式，表达式可以是一个bool属性，也可以是一个返回bool的运算式。
+        	</code>
+        	
+            <h1>1Hello, Vue.js!</h1>
+            <h1 v-if="yes">2Yes!</h1>
+            <h1 v-if="no">3No!</h1>
+            <h1 v-if="age >= 25">4Age: {{ age }}</h1>
+            <h1 v-if="name.indexOf('oo') >= 0">5Name: {{ name }}</h1>
+        </div>
+    </body>
+    <script src="assets/js/vue.js"></script>
+    <script>
+        
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                yes: true,
+                no: false,
+                age: 28,
+                name: 'keepfool'
+            }
+        })
+    </script>
+</html>

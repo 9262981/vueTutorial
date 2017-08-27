@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+		<!--1.定义View-->
+		{{ message }}
+		  <p v-text='message'></p>
+		  <p v-html='message'></p>
+		</div>
+	</body>
+	<script src="assets/js/vue.js"></script>
+	<script type="text/javascript">
+//		2.定义Model
+		var data2={message:"<h1>hello Vue!</h1>"};
+//		3.创建一个Vue实例或"ViewModel"，它用于连接View和Model
+		var app = new Vue({
+		  el: '#app',
+		  data: data2
+		})
+		console.log(app.message)
+		//测试数据model层数据改变 . 虚拟dom 是否跟随改变.
+		setTimeout(function  () {
+			app.message="你好,VUE!";
+		},2000)
+	</script>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+		<!--1.定义View-->
+		{{ a }}
+		
+		
+		<button @click="doSomething">
+			click2
+		</button>
+		</div>
+		
+	</body>
+	<script src="assets/js/vue.js"></script>
+	<script type="text/javascript">
+//		2.定义Model
+		var data2={a:1,b:[]};
+//		3.创建一个Vue实例或"ViewModel"，它用于连接View和Model
+		var app = new Vue({
+		  el: '#app',
+		  data: data2,
+		  methods:{
+		  	doSomething:function  () {
+		  		this.a++
+//		  		console.log(this.a);
+		  	}
+		  },
+		  watch:{
+		  	'a':function (val,oldVal) {
+		  		console.log(val,oldVal);
+		  	}
+		  }
+		 
+		})
+		 console.log(app.a)
+	</script>
+</html>
